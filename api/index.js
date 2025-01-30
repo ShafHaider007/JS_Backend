@@ -6,7 +6,7 @@ const serverless = require("serverless-http");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("This is my first deployed serverless function!");
 });
 
 app.get("/about", (req, res) => {
