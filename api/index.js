@@ -1,12 +1,10 @@
-// api/index.js
-require("dotenv").config(); // optional if you're using environment variables
+require("dotenv").config(); // optional
 
 const express = require("express");
 const serverless = require("serverless-http");
 
 const app = express();
 
-// Define routes
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
@@ -21,6 +19,6 @@ app.get("/contact", (req, res) => {
   );
 });
 
-// Instead of app.listen(...), export the serverless handler
+// Do NOT use app.listen(...). Instead export:
 module.exports = app;
 module.exports.handler = serverless(app);
